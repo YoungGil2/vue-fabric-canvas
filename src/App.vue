@@ -1,18 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <canvas id="test"></canvas>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import { fabric } from 'fabric'
 
 @Options({
   components: {
-    HelloWorld,
+    
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  created (): void {
+    console.log('test', new fabric.Canvas('test'))
+  }
+}
 </script>
 
 <style>
